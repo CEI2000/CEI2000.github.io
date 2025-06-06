@@ -1,2 +1,53 @@
-# CEI2000.github.io
-La Universidad Tecnológica de Tecámac (UTTEC) es una institución pública fundada en 1996 en el Estado de México. Ofrece formación integral y de alta calidad en áreas técnicas y de ingeniería, preparando profesionales con conocimientos aplicados y habilidades prácticas para el sector productivo y el desarrollo socioeconómico.
+Portal Interactivo UTTEC
+¡Hola!
+
+Es un placer presentarles este Portal Web Interactivo de Una Sola Página (SPA) para la Universidad Tecnológica de Tecámac (UTTEC). Diseñado para ofrecer una experiencia de usuario moderna y fluida, este proyecto facilita la exploración de información clave sobre la institución a futuros estudiantes y a toda la comunidad.
+
+Características Principales
+Navegación Intuitiva y Responsiva: Una barra de navegación clara que permite un acceso rápido a todas las secciones importantes, adaptándose perfectamente a cualquier tamaño de pantalla.
+
+Contenido Dinámico y Atractivo:
+
+Oferta Académica: Explora los programas de TSU, Ingenierías/Licenciaturas y Maestrías mediante pestañas interactivas para una fácil comparación.
+
+Vida Estudiantil: Descubre las vibrantes actividades culturales y deportivas de la universidad presentadas en tarjetas visuales.
+
+Instalaciones Modernas: Conoce la infraestructura de vanguardia, desde laboratorios especializados hasta áreas de esparcimiento.
+
+Proceso de Admisión Simplificado: Un flujo visual paso a paso que explica cómo unirte a la comunidad UTTEC.
+
+Noticias Recientes: Información importante destacada para mantenerte al tanto.
+
+Diseño Limpio y Profesional: Una paleta de colores cálidos y neutros, junto con la tipografía Inter, crea un ambiente acogedor y fácil de leer.
+
+Tecnologías Utilizadas
+HTML5: Estructura fundamental de la página.
+
+Tailwind CSS: Framework CSS para un estilizado rápido, responsivo y consistente.
+
+JavaScript: Para la funcionalidad del menú móvil, la interactividad de las pestañas de oferta académica y el manejo del estado general de la aplicación.
+
+Cómo Ejecutar el Proyecto
+Para visualizar la página en acción, sigue estos sencillos pasos:
+
+Clona este repositorio en tu máquina local:
+git clone https://github.com/TuUsuario/portal-uttec.git
+
+Navega al directorio del proyecto:
+cd portal-uttec
+
+Abre el archivo index.html en tu navegador web preferido.
+
+Contribuciones
+¡Las contribuciones son siempre bienvenidas! Si tienes sugerencias, mejoras o encuentras algún error, no dudes en abrir un issue o enviar un pull request.
+
+¡Conectemos!
+Nos encantaría conocer tu opinión sobre este proyecto y mantenernos en contacto.
+
+Sitio Web Oficial de UTTEC: https://uttecamac.edomex.gob.mx/
+
+Facebook: https://www.facebook.com/UTTECsitiooficial
+
+Twitter: https://twitter.com/UTTECoficial
+
+¡Gracias por tu tiempo y consideración!
