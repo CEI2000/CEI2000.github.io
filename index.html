@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Interactivo | Universidad Tecnológica de Tecámac</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #333;
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #0f9949;
+            border-bottom-color: #0f9949;
+        }
+        .tab-button.active {
+            background-color: #0f9949;
+            color: #FFFFFF;
+        }
+        .tab-button {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('UTTEC.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .section-title {
+            border-bottom: 3px solid #0f9949;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .process-step {
+            border-left: 3px solid #2C3E50;
+        }
+        .process-step:last-child {
+            border-left: none;
+        }
+    </style>
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: Se ha diseñado una SPA temática con navegación fija para un acceso rápido. La estructura prioriza el viaje del usuario, comenzando con una introducción general (Inicio), seguida de las secciones más consultadas: Oferta Académica (con pestañas interactivas para una fácil comparación), Vida Estudiantil (con tarjetas visuales para mayor impacto), Instalaciones, y el Proceso de Admisión (visualizado como un flujo). Esta arquitectura no lineal permite a los usuarios acceder a la información que más les interesa de forma inmediata, mejorando la usabilidad en comparación con la lectura de un informe estático. -->
+    <!-- Visualization & Content Choices: Reporte Info: Oferta Académica -> Meta: Organizar -> Viz/Presentación: Pestañas interactivas (HTML/CSS/JS) -> Interacción: Clic para mostrar contenido -> Justificación: Facilita la exploración de múltiples categorías (TSU, Ing/Lic, Maestría) sin sobrecargar la UI. | Reporte Info: Actividades y Facilidades -> Meta: Informar/Enganchar -> Viz/Presentación: Tarjetas con iconos Unicode (HTML/Tailwind) -> Interacción: Hover para efecto visual -> Justificación: Los iconos y las tarjetas son más escaneables y visualmente atractivos que las listas. | Reporte Info: Proceso de Admisión -> Meta: Explicar Proceso -> Viz/Presentación: Flujo visual con pasos (HTML/Tailwind) -> Interacción: Estático -> Justificación: Una representación visual del proceso es más intuitiva que el texto. | Reporte Info: Noticias -> Meta: Informar evento clave -> Viz/Presentación: Tarjeta de alerta destacada -> Interacción: Estática -> Justificación: Separa la información sensible pero importante del resto del contenido promocional, presentándola de forma objetiva. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-[#F8F7F4]">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <img src="logo.png" alt="UTTEC Logo" class="h-10">
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#inicio" class="nav-link pb-1">Inicio</a>
+                <a href="#oferta" class="nav-link pb-1">Oferta Académica</a>
+                <a href="#vida" class="nav-link pb-1">Vida Estudiantil</a>
+                <a href="#instalaciones" class="nav-link pb-1">Instalaciones</a>
+                <a href="#admisiones" class="nav-link pb-1">Admisiones</a>
+                <a href="#contacto" class="nav-link pb-1">Contacto</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">☰</button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#inicio" class="block py-2 text-center nav-link">Inicio</a>
+            <a href="#oferta" class="block py-2 text-center nav-link">Oferta Académica</a>
+            <a href="#vida" class="block py-2 text-center nav-link">Vida Estudiantil</a>
+            <a href="#instalaciones" class="block py-2 text-center nav-link">Instalaciones</a>
+            <a href="#admisiones" class="block py-2 text-center nav-link">Admisiones</a>
+            <a href="#contacto" class="block py-2 text-center nav-link">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-section text-white min-h-[60vh] flex items-center">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Universidad Tecnológica de Tecámac</h1>
+                <p class="text-xl md:text-2xl font-light">"Educación, Ciencia y Tecnología para el Desarrollo"</p>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-6 section-title">Formando Profesionales para el Futuro</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-700">
+                    Fundada en 1996, la Universidad Tecnológica de Tecámac (UTTEC) es un organismo público descentralizado del Gobierno del Estado de México. Nuestra misión es formar profesionales con una preparación integral, aptos para aplicar sus conocimientos de forma creativa en la solución de problemas del sector productivo y contribuir al crecimiento económico y social de México.
+                </p>
+            </div>
+        </section>
+
+        <section id="oferta" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 section-title">Oferta Académica</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-700">Explora nuestros programas educativos, diseñados para ser pertinentes, intensivos y de alta calidad, asegurando una rápida inserción al campo laboral. Selecciona una categoría para ver las carreras disponibles.</p>
+                </div>
+
+                <div class="flex justify-center mb-8">
+                    <div class="bg-gray-200 rounded-full p-1 flex space-x-1">
+                        <button data-tab="tsu" class="tab-button active text-sm md:text-base font-semibold px-4 py-2 rounded-full">Técnico Superior</button>
+                        <button data-tab="ing" class="tab-button text-sm md:text-base font-semibold px-4 py-2 rounded-full">Ingeniería/Licenciatura</button>
+                        <button data-tab="mae" class="tab-button text-sm md:text-base font-semibold px-4 py-2 rounded-full">Maestría</button>
+                    </div>
+                </div>
+
+                <div id="tab-content" class="max-w-4xl mx-auto">
+                    <div id="tsu-content" class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">Administración y Evaluación de Proyectos</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Capital Humano (Recursos Humanos)</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Desarrollo de Negocios (Mercadotecnia)</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Mantenimiento Industrial</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Mecatrónica (Automatización)</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Nanotecnología (Materiales)</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Procesos Industriales (Manufactura)</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Química (Biotecnología)</div>
+                        <div class="bg-white p-4 rounded-lg shadow">TIC (Sistemas Informáticos)</div>
+                        <div class="bg-white p-4 rounded-lg shadow">TIC (Redes y Telecomunicaciones)</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Energías Renovables</div>
+                    </div>
+
+                    <div id="ing-content" class="hidden grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">Ing. Industrial</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Ing. en Nanotecnología</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Ing. en TIC en Innovación Digital</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Ing. en Energía y Desarrollo Sostenible</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Ing. en Mantenimiento Industrial</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Ing. Mecatrónica</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Ing. en Biotecnología</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Lic. en Administración</div>
+                        <div class="bg-white p-4 rounded-lg shadow">Lic. en Negocios y Mercadotecnia</div>
+                    </div>
+                    
+                    <div id="mae-content" class="hidden text-center">
+                        <div class="bg-white p-6 rounded-lg shadow inline-block">Maestría en Tecnología Productiva</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vida" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 section-title">Vida Estudiantil</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-700">Tu formación es integral. Fomentamos tu desarrollo intelectual, humano, social y profesional a través de un vibrante programa de actividades culturales y deportivas que complementan tu educación.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center text-[#2C3E50]">🎨 Actividades Culturales</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">💃</span>Bailes de Salón</div>
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">🎭</span>Teatro</div>
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">🎤</span>Oratoria y Canto</div>
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">🎸</span>Música y Rondalla</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center text-[#2C3E50]">⚽ Actividades Deportivas</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">🏀</span>Baloncesto</div>
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">🏈</span>Fútbol Americano</div>
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">🏐</span>Voleibol</div>
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">🥋</span>Taekwondo</div>
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">♟️</span>Ajedrez</div>
+                            <div class="card bg-gray-50 p-6 rounded-lg text-center"><span class="text-4xl mb-2 block">🎺</span>Banda de Guerra</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="instalaciones" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 section-title">Instalaciones de Vanguardia</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-700">Contamos con infraestructura moderna y equipada para apoyar tu proceso de enseñanza-aprendizaje y la investigación aplicada en todas nuestras áreas de estudio.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                    <div class="card bg-white p-6 rounded-lg shadow"><span class="text-4xl mb-2 block">🔬</span>Laboratorios Especializados</div>
+                    <div class="card bg-white p-6 rounded-lg shadow"><span class="text-4xl mb-2 block">🛠️</span>Talleres de Práctica</div>
+                    <div class="card bg-white p-6 rounded-lg shadow"><span class="text-4xl mb-2 block">💻</span>Salas de Cómputo</div>
+                    <div class="card bg-white p-6 rounded-lg shadow"><span class="text-4xl mb-2 block">📡</span>Cabina de Radio y TV</div>
+                    <div class="card bg-white p-6 rounded-lg shadow"><span class="text-4xl mb-2 block">📚</span>Biblioteca</div>
+                    <div class="card bg-white p-6 rounded-lg shadow"><span class="text-4xl mb-2 block">🏟️</span>Centro Deportivo</div>
+                    <div class="card bg-white p-6 rounded-lg shadow"><span class="text-4xl mb-2 block">🌳</span>Áreas de Esparcimiento</div>
+                    <div class="card bg-white p-6 rounded-lg shadow"><span class="text-4xl mb-2 block">🏫</span>Aulas Equipadas</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="admisiones" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 section-title">Proceso de Admisión</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-700">Unirte a la comunidad UTTEC es sencillo. Sigue nuestro proceso de selección de tres etapas para comenzar tu camino profesional con nosotros.</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-stretch md:space-x-8">
+                    <div class="process-step flex-1 p-6 relative">
+                         <span class="absolute -left-5 top-1/2 -translate-y-1/2 bg-[#D35400] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">1</span>
+                        <h4 class="font-bold text-xl mb-2">Examen de Admisión</h4>
+                        <p>Realiza tu pre-registro en línea, cubre la cuota y presenta el examen de conocimientos como primer paso.</p>
+                    </div>
+                     <div class="process-step flex-1 p-6 relative">
+                         <span class="absolute -left-5 top-1/2 -translate-y-1/2 bg-[#D35400] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">2</span>
+                        <h4 class="font-bold text-xl mb-2">Curso Propedéutico</h4>
+                        <p>Participa en el curso de preparación, diseñado para nivelar tus conocimientos y familiarizarte con nuestro modelo educativo.</p>
+                    </div>
+                    <div class="process-step flex-1 p-6 relative">
+                        <span class="absolute -left-5 top-1/2 -translate-y-1/2 bg-[#D35400] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">3</span>
+                        <h4 class="font-bold text-xl mb-2">Entrevista</h4>
+                        <p>Concluye tu proceso con una entrevista personal, donde conoceremos tus intereses y potencial.</p>
+                    </div>
+                </div>
+                 <div class="mt-12 text-center">
+                    <a href="https://uttecamac.edomex.gob.mx/aspirantes" target="_blank" class="bg-[#2C3E50] text-white font-bold py-3 px-8 rounded-full hover:bg-[#34495e] transition-colors">Conoce los requisitos completos</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-16 md:py-24 bg-[#2C3E50] text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Contáctanos</h2>
+                <div class="max-w-lg mx-auto">
+                    <p class="mb-4">📍 Km. 37.5 Carretera Federal México-Pachuca, Predio Sierra Hermosa, C.P. 55740, Tecámac, Estado de México.</p>
+                    <p class="mb-4">📞 <a href="tel:5559388400" class="hover:underline">55 5938 8400</a></p>
+                    <p class="mb-6">✉️ <a href="mailto:difusion@uttecamac.edu.mx" class="hover:underline">difusion@uttecamac.edu.mx</a></p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://www.facebook.com/UTTECsitiooficial" target="_blank" class="text-2xl hover:text-[#D35400] transition-colors">Facebook</a>
+                        <a href="https://twitter.com/UTTECoficial" target="_blank" class="text-2xl hover:text-[#D35400] transition-colors">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; <span id="year"></span> Universidad Tecnológica de Tecámac. Todos los derechos reservados.</p>
+            <p class="mt-2">Portal interactivo desarrollado con fines informativos.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = {
+                tsu: document.getElementById('tsu-content'),
+                ing: document.getElementById('ing-content'),
+                mae: document.getElementById('mae-content')
+            };
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tab = button.dataset.tab;
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    Object.values(tabContents).forEach(content => content.classList.add('hidden'));
+                    tabContents[tab].classList.remove('hidden');
+                });
+            });
+
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (mobileMenu.classList.contains('hidden') === false) {
+                       mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
