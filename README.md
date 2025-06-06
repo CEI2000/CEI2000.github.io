@@ -4,7 +4,8 @@ Es un placer presentarles este Portal Web Interactivo de Una Sola Página (SPA) 
 
 ---
 
-Características Principales
+## Características Principales
+
 Navegación Intuitiva y Responsiva: Una barra de navegación clara que permite un acceso rápido a todas las secciones importantes, adaptándose perfectamente a cualquier tamaño de pantalla.
 
 Contenido Dinámico y Atractivo:
@@ -23,7 +24,8 @@ Diseño Limpio y Profesional: Una paleta de colores cálidos y neutros, junto co
 
 ---
 
-Tecnologías Utilizadas
+## Tecnologías Utilizadas
+
 HTML5: Estructura fundamental de la página.
 
 Tailwind CSS: Framework CSS para un estilizado rápido, responsivo y consistente.
@@ -32,7 +34,8 @@ JavaScript: Para la funcionalidad del menú móvil, la interactividad de las pes
 
 ---
 
-Cómo Ejecutar el Proyecto
+## Cómo Ejecutar el Proyecto
+
 Para visualizar la página en acción, sigue estos sencillos pasos:
 
 Clona este repositorio en tu máquina local:
