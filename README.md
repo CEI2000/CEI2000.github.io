@@ -1,4 +1,4 @@
-## Portal Interactivo UTTEC
+# Portal Interactivo UTTEC
 
 Es un placer presentarles este Portal Web Interactivo de Una Sola Página (SPA) para la Universidad Tecnológica de Tecámac (UTTEC). Diseñado para ofrecer una experiencia de usuario moderna y fluida, este proyecto facilita la exploración de información clave sobre la institución a futuros estudiantes y a toda la comunidad.
 
